@@ -1,0 +1,34 @@
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" [(ngModel)]="email">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="personal">Personal Name</label>
+      <input type="text" class="form-control" id="personal" placeholder="Personal name" name="personal" [(ngModel)]="personal">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="password">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="mobile">Zip</label>
+      <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="mobile" placeholder="Mobile">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="age">Age</label>
+      <input type="text" class="form-control" id="age" name="age" [(ngModel)]="age" placeholder="Age">
+    </div>
+  </div>
+    <input type="submit" class="btn btn-primary" (click)="onRegisterClick()" value="Register">
+    <div *ngIf ="isSuccessfullyRegistered; then template1; else template2"></div>
+    <ng-template #template1>
+        <div *ngIf="!isSuccessfullyRegistered"> Failed Registration</div>
+    </ng-template>
+    <ng-template #template2>
+        <div *ngIf ="isSuccessfullyRegistered">Successfully Registered</div>
+    </ng-template>
+</form>

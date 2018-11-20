@@ -1,0 +1,68 @@
+<div class="container">
+  <form (ngSubmit)="onRegisterClick(f)" #f=ngForm>
+    <div class="form-row">
+      <div class="form-group col-4 pull-middle">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" (change)="onEmailChange()">
+      </div>
+      <div class="form-group col-4 pull-middle">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" ngModel>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label for="dateOfBirth">Date of birth</label>
+        <input type="text" class="form-control" id="inptuDateOfBirth" placeholder="Date of birth" name="dateOfBirth"
+          ngModel>
+      </div>
+      <div class="form-group col-4">
+        <label for="placeOfBirth">Place of birth</label>
+        <input appTextbox inputText={{placeOfBirth}} type="text" class="form-control" placeholder="Place of birth" name="placeOfBirth"
+          [(ngModel)]="placeOfBirth">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-1 pull-left">
+        <div class="dropdown">
+          <select class="custom-select" name="Geneder" ngModel>
+            <option selected>Gender</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-12  pull-middle">
+        <input type="submit" class="btn btn-primary" value="Add to List">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-5">
+        <input type="button" class="btn-primary" (click)="onChangeDataClick2()" value="DataLoad">
+        <app-interview-child #One>First Child</app-interview-child>
+        <app-interview-child #Two>Secong Child</app-interview-child>
+
+      </div>
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-12  pull-middle" *ngIf="personalList.length">
+        <div class="row ">
+          <div class="col ">Name</div>
+          <div class="col ">Place of birth</div>
+          <div class="col ">Date of birth</div>
+        </div>
+        <div class="row " *ngFor="let user of personalList" [@myAnimations]="currentState">
+          <div class="col pull-left">{{user.email}}
+          </div>
+          <div class="col ">{{user.placeOfBirth}}</div>
+          <div class="col ">{{user.dateOfBirth}}</div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <h2>Rsjx</h2>
+
+</div>

@@ -1,0 +1,15 @@
+#header {
+  background-color: lightblue;
+  height: 50px;
+}
+
+#content {
+  background-color: white;
+  height: 400px;
+  padding: 1px;
+  border: 1px solid green;
+}
+#footer {
+  background-color: lightgreen;
+  height: 50px;
+}
